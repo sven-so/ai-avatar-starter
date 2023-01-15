@@ -10,6 +10,7 @@ const Home = () => {
   const [retry, setRetry] = useState(0);
   const [retryCount, setRetryCount] = useState(maxRetries);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [finalPrompt, setFinalPrompt] = useState('');
   const onChange = (event) => {
     setInput(event.target.value);
   };
@@ -49,6 +50,8 @@ const Home = () => {
       setIsGenerating(false);
       return;
     }
+    setFinalPrompt(input);
+    setInput('');
     setImg(data.image);
     setIsGenerating(false);
   };
@@ -109,6 +112,12 @@ const Home = () => {
             </div>
           </div>
         </div>
+        {img && (
+          <div className="output-content">
+            <Image src={img} width={512} height={512} alt={finalPrompt} />
+            <p>{finalPrompt}</p>
+          </div>
+        )}
       </div>
       <div className="badge-container grow">
         <a
