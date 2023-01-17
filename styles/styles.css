@@ -154,6 +154,25 @@ body {
     cursor: pointer;
 }
 
+.help-button {
+    place-content: flex-start;
+    align-items: flex-start;
+    background-color: blueviolet;
+    border-radius: 100px;
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
+    gap: 10px;
+    height: min-content;
+    overflow: hidden;
+    padding: 16px 24px;
+    position: relative;
+    text-decoration: none;
+    width: min-content;
+    will-change: transform;
+    cursor: pointer;
+}
+
 .generate {
     outline: none;
     display: flex;
@@ -253,6 +272,14 @@ body {
     font-weight: bold;
     white-space: pre-line;
     color: white;
+}
+
+.header-subtitle h2.example {
+    text-align: center;
+    font-size: medium;
+    font-style: italic;
+    max-width: 800px;
+    margin: auto;
 }
 
 @media (max-width: 1200px) {
